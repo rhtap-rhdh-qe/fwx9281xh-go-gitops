@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fwx9281xh-go-gitops
+  description: This is GitOps manifest for fwx9281xh-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fwx9281xh-go
+    backstage.io/kubernetes-id: fwx9281xh-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fwx9281xh-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fwx9281xh-go
